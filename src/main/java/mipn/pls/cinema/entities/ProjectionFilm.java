@@ -1,4 +1,4 @@
-package mipn.pls.cinema.dao;
+package mipn.pls.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

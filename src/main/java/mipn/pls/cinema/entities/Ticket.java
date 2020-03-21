@@ -1,4 +1,4 @@
-package mipn.pls.cinema.dao;
+package mipn.pls.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +14,12 @@ public class Ticket {
     private Long id;
     private String nomClient;
     private Double prix;
-    @Column(unique = true)
-    private int codePayement;
+    @Column(unique = true, nullable = true)
+    private Integer codePayement;
     private boolean reserve;
     @ManyToOne
-    private ProjectionFilm projectionFilm;
-    @ManyToOne
     private Place place;
+    @ManyToOne
+    private ProjectionFilm projectionFilm;
+
 }

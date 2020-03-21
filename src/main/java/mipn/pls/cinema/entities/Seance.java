@@ -1,4 +1,4 @@
-package mipn.pls.cinema.dao;
+package mipn.pls.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.util.Date;
 public class Seance {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIME)
     private Date heureDebut;
 
 }

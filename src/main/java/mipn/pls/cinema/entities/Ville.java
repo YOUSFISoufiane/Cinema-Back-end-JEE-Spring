@@ -1,4 +1,5 @@
-package mipn.pls.cinema.dao;
+package mipn.pls.cinema.entities;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,14 +11,12 @@ import java.util.Collection;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor @ToString
-public class Place {
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Ville {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String numero;
+    private String name;
     private Double longitude,altitude,latitude;
-    @ManyToOne
-    private Salle salle;
-    @OneToMany(mappedBy = "place")
-    private Collection<Ticket> tickets;
+    @OneToMany(mappedBy = "ville")
+    private Collection<Cinema> cinemas;
 
 }

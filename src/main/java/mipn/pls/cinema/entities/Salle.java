@@ -1,4 +1,4 @@
-package mipn.pls.cinema.dao;
+package mipn.pls.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,9 +14,9 @@ public class Salle {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Double nombrePlaces;
-    @OneToMany(mappedBy = "ville")
-    private Collection<Cinema> cinemas;
+    private int nombrePlaces;
+  /*  @OneToMany(mappedBy = "ville")
+    private Collection<Cinema> cinemas;*/
     @OneToMany(mappedBy = "salle")
     private Collection<Place> places;
     @ManyToOne

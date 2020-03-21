@@ -1,4 +1,4 @@
-package mipn.pls.cinema.dao;
+package mipn.pls.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,5 +23,5 @@ public class Film {
     @OneToMany(mappedBy = "film")
     private Collection<ProjectionFilm> projectionFilms;
     @ManyToOne
-    private Categories categorie;
+    private Categorie categorie;
 }
