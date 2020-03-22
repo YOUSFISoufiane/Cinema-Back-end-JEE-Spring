@@ -1,5 +1,6 @@
 package mipn.pls.cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +15,13 @@ public class Ticket {
     private Long id;
     private String nomClient;
     private Double prix;
-    @Column(unique = true, nullable = true)
+    @Column(unique = false, nullable = true)
     private Integer codePayement;
     private boolean reserve;
     @ManyToOne
     private Place place;
     @ManyToOne
-    private ProjectionFilm projectionFilm;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Projection projection;
 
 }
