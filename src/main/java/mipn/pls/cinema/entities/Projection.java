@@ -15,7 +15,7 @@ public class Projection {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date dateProjection;
-    private Double prix;
+    private double prix;
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Salle salle;
